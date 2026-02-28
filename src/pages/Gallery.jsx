@@ -66,7 +66,7 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
-  const viewport = { once: true, margin: '-80px', amount: 0.2 };
+  const viewport = { once: true, amount: 0, margin: '0px' };
 
   return (
     <>
@@ -108,12 +108,12 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ delay: i * 0.03 }}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden"
+                className="group relative aspect-[4/3] min-h-[180px] rounded-2xl overflow-hidden bg-white/5"
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="block w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex items-end p-4 lg:p-5">
