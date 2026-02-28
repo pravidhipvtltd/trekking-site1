@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LenisRoot from './components/LenisRoot';
 import Preloader from './components/Preloader';
@@ -29,11 +29,13 @@ function PageLoader() {
 
 function AppContent() {
   const { isOpen, closeContactModal } = useContactModal();
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
   return (
     <>
       <ScrollToTop />
-      <Preloader />
-      <Navbar />
+      <Preloader onComplete={() => setPreloaderDone(true)} />
+      {preloaderDone && <Navbar />}
       <main>
         <Suspense fallback={<PageLoader />}>
           <Routes>

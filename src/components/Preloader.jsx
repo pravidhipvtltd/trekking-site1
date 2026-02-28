@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Preloader() {
+const PRELOADER_DURATION = 5000; // 5 seconds
+
+export default function Preloader({ onComplete }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(false), 2400);
+    const timer = setTimeout(() => {
+      setVisible(false);
+      onComplete?.();
+    }, PRELOADER_DURATION);
     return () => clearTimeout(timer);
   }, []);
 
@@ -52,7 +57,7 @@ export default function Preloader() {
             <motion.div
               initial={{ scaleX: 0, originX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
+              transition={{ duration: 4.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
               className="h-full bg-gradient-to-r from-primary-500 to-primary-400 origin-left"
               style={{ transformOrigin: 'left' }}
             />
