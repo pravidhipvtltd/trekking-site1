@@ -1,8 +1,10 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&auto=format';
-const HERO_VIDEO = 'https://assets.mixkit.co/videos/preview/45413.mp4';
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import HeroImage from "../assets/heroImage.jpg";
+// const HERO_IMAGE =
+//   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&auto=format";
+const HERO_IMAGE = HeroImage;
+const HERO_VIDEO = "https://assets.mixkit.co/videos/preview/45413.mp4";
 
 /**
  * Hero: cinematic for Home (no props), or generic centered hero (title, subtitle, showVideo).
@@ -10,12 +12,12 @@ const HERO_VIDEO = 'https://assets.mixkit.co/videos/preview/45413.mp4';
 export default function Hero({ title, subtitle, showVideo = true }) {
   const isHome = title == null && subtitle == null;
   const useVideo = isHome ? true : showVideo;
-  const displayTitle = title ?? 'Not all journeys are destinations.';
-  const displaySubtitle = subtitle ?? 'Some change who you are.';
+  const displayTitle = title ?? "Not all journeys are destinations.";
+  const displaySubtitle = subtitle ?? "Some change who you are.";
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
 
   const bgScale = useTransform(scrollYProgress, [0, 0.6], [1, 1.08]);
@@ -44,9 +46,10 @@ export default function Hero({ title, subtitle, showVideo = true }) {
               poster={HERO_IMAGE}
               onError={(e) => {
                 const el = e.target;
-                el.style.display = 'none';
-                const fallback = el.parentElement?.querySelector('[data-fallback]');
-                if (fallback) fallback.classList.remove('hidden');
+                el.style.display = "none";
+                const fallback =
+                  el.parentElement?.querySelector("[data-fallback]");
+                if (fallback) fallback.classList.remove("hidden");
               }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />
@@ -66,7 +69,8 @@ export default function Hero({ title, subtitle, showVideo = true }) {
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 100%)',
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 100%)",
         }}
       />
 
@@ -97,13 +101,13 @@ export default function Hero({ title, subtitle, showVideo = true }) {
             transition={{ duration: 1, delay: 1.6 }}
             className="mt-10 text-base md:text-lg text-gray-400 font-light tracking-widest uppercase"
           >
-            Himalayan treks guided by locals · Est. Nepal
+            Himalayan treks guide by local experts · Est. Nepal
           </motion.p>
         )}
       </motion.div>
 
       {isHome && (
-      <motion.div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.5, duration: 1 }}
@@ -111,7 +115,11 @@ export default function Hero({ title, subtitle, showVideo = true }) {
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: [0.4, 0, 0.6, 1] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: [0.4, 0, 0.6, 1],
+            }}
             className="w-px h-16 bg-gradient-to-b from-white/50 to-transparent"
           />
         </motion.div>

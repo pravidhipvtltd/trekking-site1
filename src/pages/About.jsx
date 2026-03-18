@@ -21,7 +21,7 @@ export default function About() {
   return (
     <>
       <Hero
-        title="About Down2Earth Adventures"
+        title="About DowntoEarth Adventures"
         subtitle="Born in the shadow of the peaks. We share the Himalayas with the world."
         showVideo={false}
       />
@@ -39,7 +39,7 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Down2Earth Adventures began when our founder returned to his ancestral village. He saw an opportunity: to create trekking experiences that honored both the majesty of these mountains and the communities who call them home.
+                DowntoEarth Adventures began when our founder returned to his ancestral village. He saw an opportunity: to create trekking experiences that honored both the majesty of these mountains and the communities who call them home.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
                 Today we're a team of local Sherpas, Tamangs, and Gurungs. We share our culture, our stories, and our home with adventurers from around the world.

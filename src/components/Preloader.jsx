@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const PRELOADER_DURATION = 5000; // 5 seconds
 
@@ -30,12 +30,12 @@ export default function Preloader({ onComplete }) {
             className="text-center"
           >
             <motion.span
-              initial={{ opacity: 0, letterSpacing: '0.5em' }}
-              animate={{ opacity: 1, letterSpacing: '0.1em' }}
+              initial={{ opacity: 0, letterSpacing: "0.5em" }}
+              animate={{ opacity: 1, letterSpacing: "0.1em" }}
               transition={{ duration: 1, delay: 0.4 }}
               className="font-display text-3xl sm:text-4xl font-semibold text-white tracking-tight"
             >
-              Down2Earth Adventures
+              DowntoEarth
             </motion.span>
             <motion.span
               initial={{ opacity: 0 }}
@@ -57,9 +57,13 @@ export default function Preloader({ onComplete }) {
             <motion.div
               initial={{ scaleX: 0, originX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 4.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
+              transition={{
+                duration: 4.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.3,
+              }}
               className="h-full bg-gradient-to-r from-primary-500 to-primary-400 origin-left"
-              style={{ transformOrigin: 'left' }}
+              style={{ transformOrigin: "left" }}
             />
           </motion.div>
 

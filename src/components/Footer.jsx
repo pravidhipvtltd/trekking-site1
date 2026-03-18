@@ -1,31 +1,47 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Twitter, Instagram, Facebook, ArrowRight } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Twitter,
+  Instagram,
+  Facebook,
+  ArrowRight,
+} from "lucide-react";
 
 const footerLinks = {
   explore: [
-    { to: '/destinations', label: 'Destinations' },
-    { to: '/gallery', label: 'Gallery' },
-    { to: '/services', label: 'Services' },
-    { to: '/about', label: 'About Us' },
+    { to: "/destinations", label: "Destinations" },
+    { to: "/our_contribution", label: "Our Contribution" },
+    { to: "/activities", label: "Activity" },
+    { to: "/about", label: "About Us" },
   ],
   support: [
-    { to: '/contact', label: 'Contact' },
-    { to: '/faqs', label: 'FAQs' },
-    { to: '/booking', label: 'Booking' },
+    { to: "/contact", label: "Contact" },
+    { to: "/faqs", label: "FAQs" },
+    { to: "/booking", label: "Booking" },
   ],
 };
 
 const socialLinks = [
-  { href: '#', icon: Twitter, label: 'Twitter' },
-  { href: '#', icon: Instagram, label: 'Instagram' },
-  { href: '#', icon: Facebook, label: 'Facebook' },
+  { href: "#", icon: Twitter, label: "Twitter" },
+  {
+    href: "https://instagram.com/downtoearthadventure",
+    icon: Instagram,
+    label: "Instagram",
+  },
+  { href: "#", icon: Facebook, label: "Facebook" },
 ];
 
 const contactInfo = [
-  { icon: MapPin, label: 'Location', value: 'Thamel, Kathmandu, Nepal' },
-  { icon: Phone, label: 'Phone', value: '+977 1-XXXXXXX' },
-  { icon: Mail, label: 'Email', value: 'hello@down2earthadventures.com' },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Gokarneshor-8 Makalbari, Kathmandu Nepal",
+  },
+  { icon: Phone, label: "Phone", value: "+977 015223100 " },
+  { icon: Mail, label: "Email", value: "down2earthadventure@gmail.com" },
 ];
 
 export default function Footer() {
@@ -34,10 +50,14 @@ export default function Footer() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary-950/20 to-transparent pointer-events-none" />
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-        backgroundSize: '48px 48px',
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-12">
@@ -51,7 +71,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">
-              Premium trekking experiences in the Himalayas. Discover Nepal&apos;s majestic mountains with expert local guides.
+              Premium trekking experiences in the Himalayas. Discover
+              Nepal&apos;s majestic mountains with expert local guides.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -123,7 +144,9 @@ export default function Footer() {
                     <item.icon className="w-5 h-5" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="text-white/80 text-xs font-medium uppercase tracking-wider mb-0.5">{item.label}</p>
+                    <p className="text-white/80 text-xs font-medium uppercase tracking-wider mb-0.5">
+                      {item.label}
+                    </p>
                     <p className="text-gray-400 text-sm">{item.value}</p>
                   </div>
                 </li>
@@ -136,16 +159,18 @@ export default function Footer() {
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
           <div className="text-center sm:text-left">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Down2Earth Adventures. All rights reserved.
+              © {new Date().getFullYear()} Down2Earth Adventures. All rights
+              reserved.
               <br />
-              Powered by{' '}
+              Powered by{" "}
               <a
                 href="https://pravidhipvtltd.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-blue-400 hover:text-blue-300 transition-colors inline-block hover:scale-105"
                 style={{
-                  textShadow: '0 0 20px rgba(96, 165, 250, 0.5), 0 0 40px rgba(96, 165, 250, 0.2)',
+                  textShadow:
+                    "0 0 20px rgba(96, 165, 250, 0.5), 0 0 40px rgba(96, 165, 250, 0.2)",
                 }}
               >
                 PRAVIDHI
@@ -153,8 +178,18 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-8 text-sm text-gray-500">
-            <Link to="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link>
+            <Link
+              to="/privacy"
+              className="hover:text-primary-400 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="hover:text-primary-400 transition-colors"
+            >
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>

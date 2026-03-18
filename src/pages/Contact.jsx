@@ -32,7 +32,7 @@ export default function Contact() {
   return (
     <>
       <Hero
-        title="Let's Plan Your Trek"
+        title="Let's Plan your Trip"
         subtitle="Get in touch with our team. We'd love to help you create your dream Himalayan adventure."
         showVideo={false}
       />

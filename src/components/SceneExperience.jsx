@@ -1,21 +1,24 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Shield, Users, Map, ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Shield, Users, Map, ArrowRight } from "lucide-react";
 
 const pillars = [
   {
-    title: 'Safety First',
-    description: 'Every step backed by expertise and care. Certified guides, proven routes, and 24/7 support—because the mountains demand nothing less.',
+    title: "Safety First",
+    description:
+      "Every step backed by expertise and care. Certified guides, proven routes, and 24/7 support—because the mountains demand nothing less.",
     Icon: Shield,
   },
   {
-    title: 'Local Guides',
-    description: 'Sherpa wisdom. Himalayan soul. Our guides were born in these mountains—they share their home, culture, and stories with every trekker.',
+    title: "Local Expert Guides",
+    description:
+      "Sherpa wisdom. Himalayan soul. Our guides were born in these mountains—they share their home, culture, and stories with every trekker.",
     Icon: Users,
   },
   {
-    title: 'Custom Journeys',
-    description: 'Your pace. Your path. Your transformation. Mix trekking with culture, wildlife, or wellness—we tailor every itinerary to you.',
+    title: "Custom Journeys",
+    description:
+      "Your pace. Your path. Your transformation. Mix trekking with culture, wildlife, or wellness—we tailor every itinerary to you.",
     Icon: Map,
   },
 ];
@@ -35,7 +38,9 @@ export default function SceneExperience() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="text-primary-500 text-xs tracking-[0.3em] uppercase font-medium">Why Down2Earth Adventures</span>
+          <span className="text-primary-500 text-xs tracking-[0.3em] uppercase font-medium">
+            Why DowntoEarth Adventures
+          </span>
           <h2 className="font-display text-3xl md:text-4xl font-normal text-white mt-4">
             Built for adventurers who expect more
           </h2>
@@ -44,7 +49,7 @@ export default function SceneExperience() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-15%', amount: 0.2 }}
+          viewport={{ once: true, margin: "-15%", amount: 0.2 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-16 md:space-y-20"
         >
@@ -53,8 +58,12 @@ export default function SceneExperience() {
               key={item.title}
               initial={{ opacity: 0, x: i % 2 === 0 ? -24 : 24 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-10%', amount: 0.2 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+              viewport={{ once: true, margin: "-10%", amount: 0.2 }}
+              transition={{
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
+                delay: i * 0.08,
+              }}
               className="flex gap-8 items-start border-t border-white/10 pt-10"
             >
               <div className="shrink-0 w-14 h-14 rounded-xl bg-primary-500/20 flex items-center justify-center text-primary-400">

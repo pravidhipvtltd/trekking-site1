@@ -1,11 +1,12 @@
-import Hero from '../components/Hero';
-import SceneEmotional from '../components/SceneEmotional';
-import SceneVisual from '../components/SceneVisual';
-import SceneDestinations from '../components/SceneDestinations';
-import SceneExperience from '../components/SceneExperience';
-import SceneTestimonial from '../components/SceneTestimonial';
-import SceneCTA from '../components/SceneCTA';
-import Footer from '../components/Footer';
+import Hero from "../components/Hero";
+import SceneEmotional from "../components/SceneEmotional";
+import SceneVisual from "../components/SceneVisual";
+import SceneDestinations from "../components/SceneDestinations";
+import SceneExperience from "../components/SceneExperience";
+import SceneTestimonial from "../components/SceneTestimonial";
+import SceneCTA from "../components/SceneCTA";
+import VolunteerHomeSection from "../components/VolunteerHomeSection";
+import Footer from "../components/Footer";
 
 /**
  * Cinematic, story-driven homepage.
@@ -16,15 +17,17 @@ export default function Home() {
     <>
       {/* Scene 1: Hero */}
       <Hero />
-
       {/* Scene 2: Emotional text */}
-      <SceneEmotional />
+      {/* <SceneEmotional /> */}
 
       {/* Scene 3: Visual story */}
-      <SceneVisual />
+      {/* <SceneVisual /> */}
 
       {/* Scene 4: Destinations - full-bleed slides */}
       <SceneDestinations />
+
+      {/* Volunteer Trek Section */}
+      <VolunteerHomeSection />
 
       {/* Scene 5: Experience - Safety, Guides, Custom */}
       <SceneExperience />

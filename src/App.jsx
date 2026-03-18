@@ -1,23 +1,28 @@
-import { lazy, Suspense, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LenisRoot from './components/LenisRoot';
-import Preloader from './components/Preloader';
-import Navbar from './components/Navbar';
-import ScrollToTop from './components/ScrollToTop';
-import { ContactModalProvider, useContactModal } from './context/ContactModalContext';
-import ContactFormModal from './components/ContactFormModal';
+import { lazy, Suspense, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LenisRoot from "./components/LenisRoot";
+import Preloader from "./components/Preloader";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import {
+  ContactModalProvider,
+  useContactModal,
+} from "./context/ContactModalContext";
+import ContactFormModal from "./components/ContactFormModal";
 
-const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
-const Destinations = lazy(() => import('./pages/Destinations'));
-const DestinationDetail = lazy(() => import('./pages/DestinationDetail'));
-const Services = lazy(() => import('./pages/Services'));
-const Gallery = lazy(() => import('./pages/Gallery'));
-const Contact = lazy(() => import('./pages/Contact'));
-const FAQs = lazy(() => import('./pages/FAQs'));
-const Booking = lazy(() => import('./pages/Booking'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Trekking = lazy(() => import("./pages/Trekking"));
+const DestinationDetail = lazy(() => import("./pages/DestinationDetail"));
+const Services = lazy(() => import("./pages/Services"));
+const OurContribution = lazy(() => import("./pages/OurContribution"));
+const Contact = lazy(() => import("./pages/Contact"));
+const FAQs = lazy(() => import("./pages/FAQs"));
+const Booking = lazy(() => import("./pages/Booking"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const Activities = lazy(() => import("./pages/Activities"));
+const Expeditions = lazy(() => import("./pages/Expeditions"));
 
 function PageLoader() {
   return (
@@ -41,15 +46,17 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/destinations" element={<Destinations />} />
+            <Route path="/trekking" element={<Trekking />} />
             <Route path="/destinations/:slug" element={<DestinationDetail />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/our_contribution" element={<OurContribution />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/activities" element={<Activities />} />
+            <Route path="/expeditions" element={<Expeditions />} />
           </Routes>
         </Suspense>
       </main>
