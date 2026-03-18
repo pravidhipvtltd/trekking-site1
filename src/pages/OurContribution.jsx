@@ -1,5 +1,4 @@
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
 const galleryImages = [
@@ -127,7 +126,6 @@ export default function OurContribution() {
           </div>
         </div>
       </motion.section>
-      <Footer />
     </>
   );
 }

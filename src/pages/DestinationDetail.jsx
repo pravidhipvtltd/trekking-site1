@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Check, Minus } from 'lucide-react';
-import { getDestinationBySlug } from '../data/destinations';
-import Footer from '../components/Footer';
-import BookingModal from '../components/BookingModal';
+import { useState } from "react";
+import { Link, useParams, Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Check, Minus } from "lucide-react";
+import { getDestinationBySlug } from "../data/destinations";
+import BookingModal from "../components/BookingModal";
 
 export default function DestinationDetail() {
   const { slug } = useParams();
@@ -13,7 +12,7 @@ export default function DestinationDetail() {
 
   if (!dest) return <Navigate to="/destinations" replace />;
 
-  const viewport = { once: true, margin: '-80px', amount: 0.2 };
+  const viewport = { once: true, margin: "-80px", amount: 0.2 };
 
   return (
     <>
@@ -37,8 +36,18 @@ export default function DestinationDetail() {
               to="/destinations"
               className="inline-flex items-center gap-2 text-primary-400 text-sm uppercase tracking-wider hover:text-primary-300 mb-6"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
               All Destinations
             </Link>
@@ -71,9 +80,15 @@ export default function DestinationDetail() {
           viewport={viewport}
           className="mb-24"
         >
-          <h2 className="font-display text-2xl md:text-3xl font-normal text-white mb-6">Overview</h2>
-          <p className="text-gray-400 leading-relaxed text-lg mb-8">{dest.description}</p>
-          <p className="text-gray-400 leading-relaxed">{dest.longDescription}</p>
+          <h2 className="font-display text-2xl md:text-3xl font-normal text-white mb-6">
+            Overview
+          </h2>
+          <p className="text-gray-400 leading-relaxed text-lg mb-8">
+            {dest.description}
+          </p>
+          <p className="text-gray-400 leading-relaxed">
+            {dest.longDescription}
+          </p>
         </motion.section>
 
         {/* Quick Info */}
@@ -83,22 +98,32 @@ export default function DestinationDetail() {
           viewport={viewport}
           className="mb-24"
         >
-          <h2 className="font-display text-2xl md:text-3xl font-normal text-white mb-8">Trip Details</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-normal text-white mb-8">
+            Trip Details
+          </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="rounded-2xl bg-white/5 backdrop-blur-xl p-6 border border-white/10">
-              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">Start Point</p>
+              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">
+                Start Point
+              </p>
               <p className="text-white font-medium">{dest.startPoint}</p>
             </div>
             <div className="rounded-2xl bg-white/5 backdrop-blur-xl p-6 border border-white/10">
-              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">End Point</p>
+              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">
+                End Point
+              </p>
               <p className="text-white font-medium">{dest.endPoint}</p>
             </div>
             <div className="rounded-2xl bg-white/5 backdrop-blur-xl p-6 border border-white/10">
-              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">Best Season</p>
+              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">
+                Best Season
+              </p>
               <p className="text-white font-medium">{dest.bestSeason}</p>
             </div>
             <div className="rounded-2xl bg-white/5 backdrop-blur-xl p-6 border border-white/10">
-              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">Max Elevation</p>
+              <p className="text-primary-400 text-sm uppercase tracking-wider mb-1">
+                Max Elevation
+              </p>
               <p className="text-white font-medium">{dest.maxElevation}</p>
             </div>
           </div>
@@ -122,7 +147,8 @@ export default function DestinationDetail() {
               Day-by-Day Itinerary
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-              Where to start, where to stay each night, and what to expect. Your complete trekking roadmap.
+              Where to start, where to stay each night, and what to expect. Your
+              complete trekking roadmap.
             </p>
           </div>
 
@@ -140,8 +166,12 @@ export default function DestinationDetail() {
                   key={day.day}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-40px', amount: 0.2 }}
-                  transition={{ duration: 0.5, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-40px", amount: 0.2 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.04,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                   className="relative flex gap-6"
                 >
                   {/* Timeline node */}
@@ -183,7 +213,9 @@ export default function DestinationDetail() {
           viewport={viewport}
           className="mb-24"
         >
-          <h2 className="font-display text-2xl md:text-3xl font-normal text-white mb-8">Highlights</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-normal text-white mb-8">
+            Highlights
+          </h2>
           <ul className="flex flex-wrap gap-3">
             {dest.highlights.map((h) => (
               <li
@@ -211,7 +243,10 @@ export default function DestinationDetail() {
             <ul className="space-y-2 text-gray-400">
               {dest.included.map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <Check className="w-4 h-4 text-primary-400 shrink-0" strokeWidth={2.5} />
+                  <Check
+                    className="w-4 h-4 text-primary-400 shrink-0"
+                    strokeWidth={2.5}
+                  />
                   {item}
                 </li>
               ))}
@@ -244,7 +279,8 @@ export default function DestinationDetail() {
             Ready to trek {dest.title}?
           </h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Click below to book directly. {dest.title} is already selected—just add your details, dates, and pick-up point.
+            Click below to book directly. {dest.title} is already selected—just
+            add your details, dates, and pick-up point.
           </p>
           <motion.button
             type="button"
@@ -263,8 +299,6 @@ export default function DestinationDetail() {
         onClose={() => setBookingOpen(false)}
         trek={dest}
       />
-
-      <Footer />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LenisRoot from "./components/LenisRoot";
 import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import {
   ContactModalProvider,
@@ -60,6 +61,7 @@ function AppContent() {
           </Routes>
         </Suspense>
       </main>
+      <Footer />
       <ContactFormModal isOpen={isOpen} onClose={closeContactModal} />
     </>
   );

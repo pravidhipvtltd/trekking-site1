@@ -7,7 +7,6 @@ import {
   staggerItem,
   viewport,
 } from "../utils/motion";
-import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 
 const FILTERS = [
@@ -155,7 +154,7 @@ export default function Expeditions() {
           </motion.div>
 
           <motion.div
-          key={activeFilter}
+            key={activeFilter}
             className="grid gap-8 md:grid-cols-2 xl:grid-cols-3"
             variants={staggerContainer}
             initial="hidden"
@@ -238,8 +237,6 @@ export default function Expeditions() {
           </motion.div>
         </motion.div>
       </section>
-
-      <Footer />
     </>
   );
 }

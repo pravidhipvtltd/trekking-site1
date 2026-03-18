@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import Hero from "../components/Hero";
 import DestinationCard from "../components/DestinationCard";
-import Footer from "../components/Footer";
 import { destinations } from "../data/destinations";
 
 const filters = [
@@ -35,14 +34,14 @@ export default function Trekking() {
       {/* Filter Section */}
       <section className="py-20 -mt-10 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="flex flex-wrap gap-2 justify-center"
           >
             {filters.map((filter) => (
-              <motion.button
+              <Motion.button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
                 whileHover={{ scale: 1.03 }}
@@ -54,14 +53,14 @@ export default function Trekking() {
                 }`}
               >
                 {filter.label}
-              </motion.button>
+              </Motion.button>
             ))}
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
       {/* Destinations Grid */}
-      <motion.section
+      <Motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-60px" }}
@@ -69,7 +68,7 @@ export default function Trekking() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
-            <motion.div
+            <Motion.div
               key={activeFilter}
               initial="hidden"
               animate="visible"
@@ -84,7 +83,7 @@ export default function Trekking() {
               className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8"
             >
               {filteredDestinations.map((dest) => (
-                <motion.div
+                <Motion.div
                   key={dest.slug}
                   variants={{
                     hidden: { opacity: 0, y: 30 },
@@ -101,24 +100,22 @@ export default function Trekking() {
                   <DestinationCard
                     destination={{ ...dest, title: dest.title }}
                   />
-                </motion.div>
+                </Motion.div>
               ))}
-            </motion.div>
+            </Motion.div>
           </AnimatePresence>
 
           {filteredDestinations.length === 0 && (
-            <motion.p
+            <Motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center text-gray-500 py-20"
             >
               No destinations match this filter.
-            </motion.p>
+            </Motion.p>
           )}
         </div>
-      </motion.section>
-
-      <Footer />
+      </Motion.section>
     </>
   );
 }

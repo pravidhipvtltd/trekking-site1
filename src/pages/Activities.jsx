@@ -1,5 +1,4 @@
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 
 const activities = [
   {
@@ -23,28 +22,28 @@ const activities = [
     image:
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=85",
   },
-   {
+  {
     title: "Charity Trek",
     description:
       "Experience rich wildlife, lush landscapes, and peaceful nature escapes with guided safari adventures in pristine terrain.",
     image:
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=85",
   },
-    {
+  {
     title: "Expeditions",
     description:
       "Experience rich wildlife, lush landscapes, and peaceful nature escapes with guided safari adventures in pristine terrain.",
     image:
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=85",
   },
-   {
+  {
     title: "Tour",
     description:
       "Experience rich wildlife, lush landscapes, and peaceful nature escapes with guided safari adventures in pristine terrain.",
     image:
       "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=85",
   },
-   {
+  {
     title: "Treks",
     description:
       "Experience rich wildlife, lush landscapes, and peaceful nature escapes with guided safari adventures in pristine terrain.",
@@ -123,7 +122,6 @@ const Activities = () => {
           </div>
         </div>
       </section>
-       <Footer />
     </>
   );
 };

@@ -6,7 +6,6 @@ import SceneExperience from "../components/SceneExperience";
 import SceneTestimonial from "../components/SceneTestimonial";
 import SceneCTA from "../components/SceneCTA";
 import VolunteerHomeSection from "../components/VolunteerHomeSection";
-import Footer from "../components/Footer";
 
 /**
  * Cinematic, story-driven homepage.
@@ -37,8 +36,6 @@ export default function Home() {
 
       {/* Scene 7: Final CTA */}
       <SceneCTA />
-
-      <Footer />
     </>
   );
 }

@@ -1,65 +1,68 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Footprints, Map, Mountain, Plane } from 'lucide-react';
-import Hero from '../components/Hero';
-import ServiceCard from '../components/ServiceCard';
-import ParallaxSection from '../components/ParallaxSection';
-import Footer from '../components/Footer';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Footprints, Map, Mountain, Plane } from "lucide-react";
+import Hero from "../components/Hero";
+import ServiceCard from "../components/ServiceCard";
+import ParallaxSection from "../components/ParallaxSection";
 
 const services = [
   {
-    title: 'Guided Trekking',
-    description: 'Expert local guides lead you through Nepal\'s most spectacular trails. Small groups, personalized pace, and unforgettable experiences.',
+    title: "Guided Trekking",
+    description:
+      "Expert local guides lead you through Nepal's most spectacular trails. Small groups, personalized pace, and unforgettable experiences.",
     Icon: Footprints,
     features: [
-      'Certified Sherpa & local guides',
-      'Small group sizes (max 10)',
-      'All permits and logistics handled',
-      'Tea house or camping options',
+      "Certified Sherpa & local guides",
+      "Small group sizes (max 10)",
+      "All permits and logistics handled",
+      "Tea house or camping options",
     ],
   },
   {
-    title: 'Custom Tours',
-    description: 'Design your perfect adventure. Mix trekking with culture, wildlife, or wellness. We tailor every detail to your vision.',
+    title: "Custom Tours",
+    description:
+      "Design your perfect adventure. Mix trekking with culture, wildlife, or wellness. We tailor every detail to your vision.",
     Icon: Map,
     features: [
-      'Fully customizable itineraries',
-      'Flexible dates and duration',
-      'Combine multiple experiences',
-      'Private group options',
+      "Fully customizable itineraries",
+      "Flexible dates and duration",
+      "Combine multiple experiences",
+      "Private group options",
     ],
   },
   {
-    title: 'Expeditions',
-    description: 'Planning a summit attempt or high-altitude trek? Our expedition team handles permits, equipment, and logistics for serious adventures.',
+    title: "Expeditions",
+    description:
+      "Planning a summit attempt or high-altitude trek? Our expedition team handles permits, equipment, and logistics for serious adventures.",
     Icon: Mountain,
     features: [
-      '8000m peak expeditions',
-      'Climbing permit assistance',
-      'Expedition-grade equipment',
-      'Medical support coordination',
+      "8000m peak expeditions",
+      "Climbing permit assistance",
+      "Expedition-grade equipment",
+      "Medical support coordination",
     ],
   },
   {
-    title: 'Helicopter Tours',
-    description: 'Experience the Himalayas from above. Scenic flights to Everest, mountain helicopter tours, and aerial adventures.',
+    title: "Helicopter Tours",
+    description:
+      "Experience the Himalayas from above. Scenic flights to Everest, mountain helicopter tours, and aerial adventures.",
     Icon: Plane,
     features: [
-      'Everest scenic flight',
-      'Helicopter tours',
-      'Emergency evacuation support',
-      'Photography-focused flights',
+      "Everest scenic flight",
+      "Helicopter tours",
+      "Emergency evacuation support",
+      "Photography-focused flights",
     ],
   },
 ];
 
-const sectionViewport = { once: true, margin: '-80px', amount: 0.2 };
+const sectionViewport = { once: true, margin: "-80px", amount: 0.2 };
 
 const benefits = [
-  { stat: '5000+', label: 'Trekkers Guided' },
-  { stat: '98%', label: 'Satisfaction Rate' },
-  { stat: '20+', label: 'Years Experience' },
-  { stat: '50+', label: 'Mountain Routes' },
+  { stat: "5000+", label: "Trekkers Guided" },
+  { stat: "98%", label: "Satisfaction Rate" },
+  { stat: "20+", label: "Years Experience" },
+  { stat: "50+", label: "Mountain Routes" },
 ];
 
 export default function Services() {
@@ -118,7 +121,10 @@ export default function Services() {
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+                    transition: {
+                      duration: 0.5,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    },
                   },
                 }}
               >
@@ -135,7 +141,8 @@ export default function Services() {
           The Promise
         </span>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-4 leading-tight">
-          Every journey begins with<br />
+          Every journey begins with
+          <br />
           <span className="text-gradient">a single step</span>
         </h2>
       </ParallaxSection>
@@ -166,14 +173,23 @@ export default function Services() {
                 key={benefit.label}
                 variants={{
                   hidden: { opacity: 0, y: 25 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    },
+                  },
                 }}
                 className="text-center"
               >
                 <p className="font-display text-4xl md:text-6xl font-bold text-gradient mb-3">
                   {benefit.stat}
                 </p>
-                <p className="text-gray-500 text-sm uppercase tracking-wider">{benefit.label}</p>
+                <p className="text-gray-500 text-sm uppercase tracking-wider">
+                  {benefit.label}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -199,15 +215,17 @@ export default function Services() {
               Let's Talk
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-4 mb-6">
-              Ready to Plan Your <span className="text-gradient">Adventure</span>?
+              Ready to Plan Your{" "}
+              <span className="text-gradient">Adventure</span>?
             </h2>
             <p className="text-gray-500 mb-10 max-w-xl mx-auto">
-              Our team will create a customized itinerary tailored to your dreams and fitness level.
+              Our team will create a customized itinerary tailored to your
+              dreams and fitness level.
             </p>
             <motion.div
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Link
                 to="/contact"
@@ -219,8 +237,6 @@ export default function Services() {
           </motion.div>
         </div>
       </motion.section>
-
-      <Footer />
     </>
   );
 }

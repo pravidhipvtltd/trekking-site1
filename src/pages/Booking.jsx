@@ -1,36 +1,39 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Check, ArrowRight } from 'lucide-react';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
-import { useContactModal } from '../context/ContactModalContext';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Check, ArrowRight } from "lucide-react";
+import Hero from "../components/Hero";
+import { useContactModal } from "../context/ContactModalContext";
 
 const steps = [
   {
     step: 1,
-    title: 'Choose Your Trek',
-    description: 'Browse our Destinations and pick the trek that inspires you. Each page has full itinerary, highlights, and booking details.',
+    title: "Choose Your Trek",
+    description:
+      "Browse our Destinations and pick the trek that inspires you. Each page has full itinerary, highlights, and booking details.",
   },
   {
     step: 2,
-    title: 'Get in Touch',
-    description: 'Use our Plan Your Trek form or Contact page to share your preferred dates, group size, and any special requests.',
+    title: "Get in Touch",
+    description:
+      "Use our Plan Your Trek form or Contact page to share your preferred dates, group size, and any special requests.",
   },
   {
     step: 3,
-    title: 'Confirm & Pay',
-    description: 'We’ll send a detailed quote and itinerary. A deposit secures your spot; payment instructions and timeline will be provided.',
+    title: "Confirm & Pay",
+    description:
+      "We’ll send a detailed quote and itinerary. A deposit secures your spot; payment instructions and timeline will be provided.",
   },
   {
     step: 4,
-    title: 'Prepare & Trek',
-    description: 'We’ll send a packing list, pre-trip briefing, and all details. Meet your guide in Kathmandu and begin your adventure.',
+    title: "Prepare & Trek",
+    description:
+      "We’ll send a packing list, pre-trip briefing, and all details. Meet your guide in Kathmandu and begin your adventure.",
   },
 ];
 
 export default function Booking() {
   const { openContactModal } = useContactModal();
-  const viewport = { once: true, margin: '-80px', amount: 0.2 };
+  const viewport = { once: true, margin: "-80px", amount: 0.2 };
 
   return (
     <>
@@ -60,7 +63,8 @@ export default function Booking() {
               Your Booking <span className="text-primary-400">Journey</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From choosing your trek to stepping on the trail—we make it straightforward.
+              From choosing your trek to stepping on the trail—we make it
+              straightforward.
             </p>
           </motion.div>
 
@@ -75,7 +79,9 @@ export default function Booking() {
                 className="flex gap-6 items-start"
               >
                 <div className="shrink-0 w-14 h-14 rounded-xl bg-primary-500/20 border border-primary-500/30 flex items-center justify-center">
-                  <span className="font-display text-xl font-bold text-primary-400">{item.step}</span>
+                  <span className="font-display text-xl font-bold text-primary-400">
+                    {item.step}
+                  </span>
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold text-white mb-2">
@@ -100,11 +106,16 @@ export default function Booking() {
               className="group flex items-center gap-4 p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-primary-500/30 hover:bg-white/[0.04] transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center group-hover:bg-primary-500/30 transition-colors">
-                <ArrowRight className="w-6 h-6 text-primary-400" strokeWidth={2} />
+                <ArrowRight
+                  className="w-6 h-6 text-primary-400"
+                  strokeWidth={2}
+                />
               </div>
               <div>
                 <p className="font-semibold text-white">Browse Destinations</p>
-                <p className="text-gray-500 text-sm">Explore our trekking routes</p>
+                <p className="text-gray-500 text-sm">
+                  Explore our trekking routes
+                </p>
               </div>
             </Link>
             <button
@@ -132,7 +143,9 @@ export default function Booking() {
               Need Help?
             </h3>
             <p className="text-gray-400 mb-6">
-              Our team can help you choose the right trek, answer questions about permits and logistics, or tailor an itinerary. Reach out anytime.
+              Our team can help you choose the right trek, answer questions
+              about permits and logistics, or tailor an itinerary. Reach out
+              anytime.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -152,8 +165,6 @@ export default function Booking() {
           </motion.div>
         </div>
       </motion.section>
-
-      <Footer />
     </>
   );
 }
