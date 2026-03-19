@@ -6,6 +6,7 @@ import SceneExperience from "../components/SceneExperience";
 import SceneTestimonial from "../components/SceneTestimonial";
 import SceneCTA from "../components/SceneCTA";
 import VolunteerHomeSection from "../components/VolunteerHomeSection";
+import ClintReviews from "../components/ClintReviews";
 
 /**
  * Cinematic, story-driven homepage.
@@ -30,6 +31,8 @@ export default function Home() {
 
       {/* Scene 5: Experience - Safety, Guides, Custom */}
       <SceneExperience />
+
+      <ClintReviews tripadvisorUrl="#" />
 
       {/* Scene 6: Testimonial - large quote */}
       <SceneTestimonial />
