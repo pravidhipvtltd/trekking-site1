@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 /**
  * Scene 2: Full-screen emotional text block.
@@ -13,7 +13,7 @@ export default function SceneEmotional() {
       <motion.div
         initial={{ opacity: 0, y: 64 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-20%', amount: 0.3 }}
+        viewport={{ once: true, margin: "-20%", amount: 0.3 }}
         transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
         className="relative max-w-5xl mx-auto text-center"
       >
@@ -30,7 +30,8 @@ export default function SceneEmotional() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-12 text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed"
         >
-          Leave behind the noise. Discover peaks that have been sacred for millennia. Return not just with memories—but renewed.
+          Leave behind the noise. Discover peaks that have been sacred for
+          millennia. Return not just with memories—but renewed.
         </motion.p>
       </motion.div>
     </section>

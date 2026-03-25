@@ -1,19 +1,17 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HeroImage from "../assets/heroImage.jpg";
-// const HERO_IMAGE =
-//   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&auto=format";
+
 const HERO_IMAGE = HeroImage;
-const HERO_VIDEO = "https://assets.mixkit.co/videos/preview/45413.mp4";
 
 /**
- * Hero: cinematic for Home (no props), or generic centered hero (title, subtitle, showVideo).
+ * Hero: cinematic for Home (no props), or generic centered hero (title, subtitle).
  */
-export default function Hero({ title, subtitle, showVideo = true }) {
+export default function Hero({ title, subtitle }) {
   const isHome = title == null && subtitle == null;
-  const useVideo = isHome ? true : showVideo;
   const displayTitle = title ?? "Not all journeys are destinations.";
   const displaySubtitle = subtitle ?? "Some change who you are.";
+
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -28,44 +26,17 @@ export default function Hero({ title, subtitle, showVideo = true }) {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
+      {/* Background Image Layer */}
       <motion.div
         style={{ scale: bgScale, opacity: bgOpacity }}
         className="absolute inset-0 z-0"
       >
-        {useVideo ? (
-          <>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover"
-              poster={HERO_IMAGE}
-              onError={(e) => {
-                const el = e.target;
-                el.style.display = "none";
-                const fallback =
-                  el.parentElement?.querySelector("[data-fallback]");
-                if (fallback) fallback.classList.remove("hidden");
-              }}
-            >
-              <source src={HERO_VIDEO} type="video/mp4" />
-            </video>
-            <img
-              src={HERO_IMAGE}
-              alt=""
-              data-fallback
-              className="absolute inset-0 w-full h-full object-cover hidden"
-            />
-          </>
-        ) : (
-          <img src={HERO_IMAGE} alt="" className="w-full h-full object-cover" />
-        )}
+        <img src={HERO_IMAGE} alt="" className="w-full h-full object-cover" />
       </motion.div>
 
+      {/* Dark Overlay */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
@@ -74,6 +45,7 @@ export default function Hero({ title, subtitle, showVideo = true }) {
         }}
       />
 
+      {/* Content */}
       <motion.div
         style={isHome ? { y: contentY, opacity: contentOpacity } : {}}
         className="relative z-20 w-full max-w-4xl mx-auto px-6 text-center"
@@ -86,6 +58,7 @@ export default function Hero({ title, subtitle, showVideo = true }) {
         >
           {displayTitle}
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,6 +67,7 @@ export default function Hero({ title, subtitle, showVideo = true }) {
         >
           {displaySubtitle}
         </motion.p>
+
         {isHome && (
           <motion.p
             initial={{ opacity: 0 }}
@@ -106,6 +80,7 @@ export default function Hero({ title, subtitle, showVideo = true }) {
         )}
       </motion.div>
 
+      {/* Scroll Indicator */}
       {isHome && (
         <motion.div
           initial={{ opacity: 0 }}

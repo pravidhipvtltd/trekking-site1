@@ -1,23 +1,35 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { easeSmooth } from '../utils/motion';
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { easeSmooth } from "../utils/motion";
 
 export default function ParallaxSection({
   image,
   overlay = true,
   children,
-  className = '',
+  className = "",
 }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'end start'],
+    offset: ["start end", "end start"],
   });
 
   // Deeper, smoother parallax with scale
-  const y = useTransform(scrollYProgress, [0, 0.25, 0.5, 0.75, 1], ['-22%', '-6%', '0%', '6%', '22%']);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [1.05, 1.02, 1, 1.08]);
-  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.45, 0.8, 1], [0.4, 0.9, 1, 1, 0.35]);
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.5, 0.75, 1],
+    ["-22%", "-6%", "0%", "6%", "22%"],
+  );
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.6, 1],
+    [1.05, 1.02, 1, 1.08],
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.45, 0.8, 1],
+    [0.4, 0.9, 1, 1, 0.35],
+  );
 
   return (
     <section
@@ -36,7 +48,7 @@ export default function ParallaxSection({
           className="w-full h-full object-cover"
         />
         {overlay && (
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/50" />
         )}
       </motion.div>
       <motion.div
@@ -46,7 +58,7 @@ export default function ParallaxSection({
         <motion.div
           initial={{ opacity: 0, y: 64 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-120px', amount: 0.25 }}
+          viewport={{ once: true, margin: "-120px", amount: 0.25 }}
           transition={{ duration: 1.1, ease: easeSmooth }}
         >
           {children}

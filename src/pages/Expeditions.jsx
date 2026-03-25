@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   fadeUp,
@@ -83,7 +84,19 @@ const EXPEDITIONS = [
 ];
 
 export default function Expeditions() {
-  const [activeFilter, setActiveFilter] = useState("6000");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialBand = searchParams.get("band") === "8000" ? "8000" : "6000";
+  const [activeFilter, setActiveFilter] = useState(initialBand);
+
+  useEffect(() => {
+    const band = searchParams.get("band") === "8000" ? "8000" : "6000";
+    setActiveFilter(band);
+  }, [searchParams]);
+
+  const handleFilterChange = (band) => {
+    setActiveFilter(band);
+    setSearchParams({ band });
+  };
 
   const filteredExpeditions = useMemo(() => {
     const in6000Band = (h) => h >= 6000 && h < 8000;
@@ -105,7 +118,10 @@ export default function Expeditions() {
         showVideo={false}
       />
 
-      <section className="relative overflow-hidden bg-charcoal-950 px-6 py-16 md:px-10 lg:px-20">
+      <section
+        id="expeditions-section"
+        className="relative overflow-hidden bg-charcoal-950 px-6 py-16 md:px-10 lg:px-20"
+      >
         <motion.div
           className="relative mx-auto max-w-7xl"
           variants={staggerContainer}
@@ -135,7 +151,7 @@ export default function Expeditions() {
                 <button
                   key={filter.key}
                   type="button"
-                  onClick={() => setActiveFilter(filter.key)}
+                  onClick={() => handleFilterChange(filter.key)}
                   className={`rounded-full border px-6 py-2.5 text-sm font-medium transition-all duration-300 md:text-base ${
                     isActive
                       ? "border-primary-400 bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-[0_0_28px_rgba(16,185,129,0.35)]"

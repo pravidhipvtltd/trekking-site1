@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { destinations } from '../data/destinations';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { destinations } from "../data/destinations";
 
 const homeDestinations = destinations.slice(0, 5);
 
@@ -15,10 +15,12 @@ export default function SceneDestinations() {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-10%' }}
+        viewport={{ once: true, margin: "-10%" }}
         className="pt-20 pb-8 px-6 text-center"
       >
-        <span className="text-primary-500 text-xs tracking-[0.3em] uppercase font-medium">Choose Your Trail</span>
+        <span className="text-primary-500 text-xs tracking-[0.3em] uppercase font-medium">
+          Choose Your Trail
+        </span>
         <h2 className="font-display text-3xl md:text-4xl font-normal text-white mt-3">
           Iconic treks. Day-by-day itineraries.
         </h2>
@@ -33,17 +35,17 @@ export default function SceneDestinations() {
             <img
               src={dest.image}
               alt={dest.title}
-              loading={i < 2 ? 'eager' : 'lazy'}
+              loading={i < 2 ? "eager" : "lazy"}
               decoding="async"
               className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent group-hover:via-black/30 transition-all duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent group-hover:via-black/20 transition-all duration-700" />
           </div>
 
           <motion.div
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-10%', amount: 0.2 }}
+            viewport={{ once: true, margin: "-10%", amount: 0.2 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 w-full max-w-5xl px-6 pb-24 md:pb-32"
           >
@@ -66,8 +68,18 @@ export default function SceneDestinations() {
             </p>
             <span className="inline-flex items-center gap-2 mt-8 text-sm uppercase tracking-wider text-primary-400 font-medium group-hover:text-primary-300 transition-colors">
               View full itinerary & route
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </span>
           </motion.div>
@@ -79,8 +91,18 @@ export default function SceneDestinations() {
           className="inline-flex items-center gap-2 text-primary-400 font-medium text-sm uppercase tracking-wider hover:text-primary-300 transition-colors"
         >
           View all destinations
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
           </svg>
         </Link>
       </div>

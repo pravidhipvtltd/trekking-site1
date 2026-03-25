@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useContactModal } from '../context/ContactModalContext';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useContactModal } from "../context/ContactModalContext";
 
 const stats = [
-  { value: '5,000+', label: 'Trekkers guided' },
-  { value: '20+', label: 'Years in Nepal' },
-  { value: '98%', label: 'Satisfaction' },
+  { value: "5,000+", label: "Trekkers guided" },
+  { value: "20+", label: "Years in Nepal" },
+  { value: "98%", label: "Satisfaction" },
 ];
 
 /**
@@ -15,13 +15,13 @@ export default function SceneCTA() {
   const { openContactModal } = useContactModal();
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#060a06] to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900 via-charcoal-900/75 to-charcoal-900 pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/20 to-transparent pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 48 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-15%', amount: 0.2 }}
+        viewport={{ once: true, margin: "-15%", amount: 0.2 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="relative text-center"
       >
@@ -29,7 +29,8 @@ export default function SceneCTA() {
           Your journey starts here.
         </h2>
         <p className="mt-6 text-lg md:text-xl text-gray-400 font-light max-w-xl mx-auto">
-          Tell us your dream. We'll craft the trek, handle the logistics, and guide you every step.
+          Tell us your dream. We'll craft the trek, handle the logistics, and
+          guide you every step.
         </p>
 
         <motion.div
@@ -65,8 +66,12 @@ export default function SceneCTA() {
         >
           {stats.map((s) => (
             <div key={s.label}>
-              <p className="font-display text-2xl md:text-3xl font-normal text-primary-400">{s.value}</p>
-              <p className="text-xs uppercase tracking-wider text-gray-500 mt-1">{s.label}</p>
+              <p className="font-display text-2xl md:text-3xl font-normal text-primary-400">
+                {s.value}
+              </p>
+              <p className="text-xs uppercase tracking-wider text-gray-500 mt-1">
+                {s.label}
+              </p>
             </div>
           ))}
         </motion.div>

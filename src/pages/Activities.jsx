@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Hero from "../components/Hero";
 
 const activities = [
@@ -52,7 +54,27 @@ const activities = [
   },
 ];
 
+const toSlug = (text) =>
+  text
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+
 const Activities = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      return;
+    }
+
+    const targetId = hash.replace("#", "");
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [hash]);
+
   return (
     <>
       <Hero
@@ -79,8 +101,9 @@ const Activities = () => {
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {activities.map((activity) => (
               <div
+                id={toSlug(activity.title)}
                 key={activity.title}
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-400 hover:-translate-y-2 hover:border-primary-500/40"
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm transition duration-400 hover:-translate-y-2 hover:border-primary-500/40 scroll-mt-32"
               >
                 <div className="relative h-72 overflow-hidden">
                   <img
